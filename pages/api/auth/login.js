@@ -21,7 +21,7 @@ export default async function (req, res) {
 
     const serialised = serialize("OursiteJWT", token, {
       httpOnly: true,
-      secure: process.env.NODE_ENV !== "development",
+      secure: "development" !== "development",
       sameSite: "strict",
       maxAge: 5,
       path: "/",
